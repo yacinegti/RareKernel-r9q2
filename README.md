@@ -1,3 +1,29 @@
+# RareKernel
+
+**Kernel for the SM-G990B / r9q based on AQUA Kernel**  
+Kernel version: **5.4.259**  
+With **KSU-Next** baked in.
+
+---
+
+## TODO
+
+- Apply recent kernel patches  
+- Apply susfs patches  
+- Optimizations…
+
+---
+
+## Known Issues
+
+- None
+
+---
+
+## Attribution
+
+Sourced from AQUA Kernel (Victor_cris@xda-developers)
+
 # How do I submit patches to Android Common Kernels
 
 1. BEST: Make all of your changes to upstream Linux. If appropriate, backport to the stable releases.
