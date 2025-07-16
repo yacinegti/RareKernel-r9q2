@@ -85,9 +85,9 @@ class ELF:
         self.__symbols_list_init_data = None
         self.__relocs_text = None
         self.__relocs_rodata = None
-        self.__re_hexadecimal = "\s*[0-9A-Fa-f]+\s*"
-        self.__re_sec_name = "\s*[._a-zA-Z]+\s*"
-        self.__re_type = "\s*[A-Z]+\s*"
+        self.__re_hexadecimal = r"\s*[0-9A-Fa-f]+\s*"
+        self.__re_sec_name = r"\s*[._a-zA-Z]+\s*"
+        self.__re_type = r"\s*[A-Z]+\s*"
         self.__altinstr_text = None
         self.__altinstr_rodata = None
         self.__readelf_path, self.__obj_parser_tool = self.select_parser_tools(elf_file, first_obj_file)
@@ -145,7 +145,7 @@ class ELF:
         """
         if len(self.__sections) == 0:
             sec_header = self.get_raw_by_tool(self.__readelf_path, ["-SW",  self.__elf_file]).strip()
-            secs = re.compile("^.*\[.*\](" + self.__re_sec_name + self.__re_type + self.__re_hexadecimal +
+            secs = re.compile(r"^.*\[.*\](" + self.__re_sec_name + self.__re_type + self.__re_hexadecimal +
                               self.__re_hexadecimal + self.__re_hexadecimal + ")", re.MULTILINE)
             found = secs.findall(sec_header)
             for line in found:
@@ -377,7 +377,7 @@ class ELF:
             self.__relocs_text = list()
             self.__relocs_rodata = list()
             relocs = self.get_raw_by_tool(self.__readelf_path, ["-rW",  self.__elf_file])
-            rel = re.compile(r"^(" + self.__re_hexadecimal + ")\s*", re.MULTILINE)
+            rel = re.compile(r"^(" + self.__re_hexadecimal + r")\s*", re.MULTILINE)
             section_text, section_rodata = self.get_rodata_text_scope()
             for el in rel.findall(relocs.strip()):
                 rel_addr = self.utils.to_int(el)
