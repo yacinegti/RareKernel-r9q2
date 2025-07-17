@@ -8,8 +8,7 @@ With **KSU-Next** and **susfs** baked in.
 
 ## TODO
 
-- Apply recent kernel patches  
-- Apply susfs patches  
+- Cherry-pick from upstream and update kernel
 - Optimizations…
 
 ---
