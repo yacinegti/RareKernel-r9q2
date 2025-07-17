@@ -2,7 +2,7 @@
 
 **Kernel for the SM-G990B / r9q based on AQUA Kernel**  
 Kernel version: **5.4.259**  
-With **KSU-Next** baked in.
+With **KSU-Next** and **susfs** baked in.
 
 ---
 
