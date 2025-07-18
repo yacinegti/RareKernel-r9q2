@@ -5,7 +5,7 @@ on:
   pull_request:
   push:
     branches:
-      - 'android-14'
+      - 'main'
 
 jobs:
   build_aqua:
