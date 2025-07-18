@@ -40,7 +40,7 @@ jobs:
           git clone https://github.com/glikched/AnyKernel3 -b r9q ./AnyKernel3
       - name: Build Kernel Clean
         run: |
-          source ./build_script.sh ${{ matrix.target }}
+          source ./build_5.4.sh ${{ matrix.target }}
           cp ./AnyKernel3/AQUA* ./
 #      - name: Clean Kernel Source
 #        run: |
